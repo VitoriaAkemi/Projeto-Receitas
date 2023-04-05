@@ -14,7 +14,8 @@ public class Usuario {
 
 		
 		@Id
-		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id")
+		@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "usuario")
+		@Column(name="CD_ID")
 		private int id;
 
 		@NotBlank(message = "Nome obrigatório!")
