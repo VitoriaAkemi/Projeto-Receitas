@@ -1,11 +1,14 @@
 package br.com.fiap.receitas.model;
 
+import java.util.List;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotBlank;
@@ -26,6 +29,21 @@ public class Perfil {
 	@OneToOne
 	@JoinColumn(name="ID_USUARIO")
 	private Usuario usuario;
+	
+	@OneToMany(mappedBy = "perfil")
+	private List<Tipo> tipos;
+
+	public Perfil() {
+		super();
+	}
+
+	public Perfil(int id, @NotBlank(message = "Nome obrigatório!") String nome, Usuario usuario, List<Tipo> tipos) {
+		super();
+		this.id = id;
+		this.nome = nome;
+		this.usuario = usuario;
+		this.tipos = tipos;
+	}
 
 	public int getId() {
 		return id;
@@ -49,6 +67,14 @@ public class Perfil {
 
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public List<Tipo> getTipos() {
+		return tipos;
+	}
+
+	public void setTipos(List<Tipo> tipos) {
+		this.tipos = tipos;
 	}
 	
 	

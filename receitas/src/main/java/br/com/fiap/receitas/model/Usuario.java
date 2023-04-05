@@ -47,13 +47,14 @@ public class Usuario {
 		public Usuario(int id, @NotBlank(message = "Nome obrigatório!") String nome,
 				@NotBlank(message = "Sobrenome obrigatório!") String sobrenome,
 				@NotBlank(message = "Email obrigatório!") String email,
-				@NotBlank(message = "Senha obrigatória!") String senha) {
+				@NotBlank(message = "Senha obrigatória!") String senha, Perfil perfil) {
 			super();
 			this.id = id;
 			this.nome = nome;
 			this.sobrenome = sobrenome;
 			this.email = email;
 			this.senha = senha;
+			this.perfil = perfil;
 		}
 
 		public int getId() {
