@@ -50,4 +50,68 @@ public class Receita {
 	@NotBlank(message = "Categoria obrigatória!")
 	@Column(name="DS_CATEGORIA")
 	private String categoria;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+
+	public String getModo_preparo() {
+		return modo_preparo;
+	}
+
+	public void setModo_preparo(String modo_preparo) {
+		this.modo_preparo = modo_preparo;
+	}
+
+	public Calendar getDataFabricacao() {
+		return dataFabricacao;
+	}
+
+	public void setDataFabricacao(Calendar dataFabricacao) {
+		this.dataFabricacao = dataFabricacao;
+	}
+
+	public int getQuantidadeIngrediente() {
+		return quantidadeIngrediente;
+	}
+
+	public void setQuantidadeIngrediente(int quantidadeIngrediente) {
+		this.quantidadeIngrediente = quantidadeIngrediente;
+	}
+
+	public Calendar getTempoPreparo() {
+		return tempoPreparo;
+	}
+
+	public void setTempoPreparo(Calendar tempoPreparo) {
+		this.tempoPreparo = tempoPreparo;
+	}
+
+	public int getQuantidadeRendimento() {
+		return quantidadeRendimento;
+	}
+
+	public void setQuantidadeRendimento(int quantidadeRendimento) {
+		this.quantidadeRendimento = quantidadeRendimento;
+	}
+
+	public String getCategoria() {
+		return categoria;
+	}
+
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
+	}
 }

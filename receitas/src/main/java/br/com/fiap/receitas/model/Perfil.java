@@ -1,0 +1,41 @@
+package br.com.fiap.receitas.model;
+
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.SequenceGenerator;
+import jakarta.validation.constraints.NotBlank;
+
+@Entity
+@SequenceGenerator(name= "perfil", sequenceName = "SQ_RECEITA", allocationSize = 1)
+public class Perfil {
+	
+	@Id
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "perfil")
+	@Column(name="CD_ID")
+	private int id;
+
+	@NotBlank(message = "Categoria obrigatório!")
+	@Column(name="DS_CATEGORIA")
+	private String titulo;
+
+	public int getId() {
+		return id;
+	}
+
+	public void setId(int id) {
+		this.id = id;
+	}
+
+	public String getTitulo() {
+		return titulo;
+	}
+
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
+	
+	
+}
