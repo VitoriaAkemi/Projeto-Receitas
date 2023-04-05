@@ -9,17 +9,17 @@ import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotBlank;
 
 @Entity
-@SequenceGenerator(name= "perfil", sequenceName = "SQ_RECEITA", allocationSize = 1)
-public class Perfil {
+@SequenceGenerator(name= "tipo", sequenceName = "SQ_RECEITA", allocationSize = 1)
+public class Tipo {
 	
 	@Id
-	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "perfil")
+	@GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "tipo")
 	@Column(name="CD_ID")
 	private int id;
 
-	@NotBlank(message = "Nome obrigatório!")
-	@Column(name="NM_NOME")
-	private String nome;
+	@NotBlank(message = "Categoria obrigatório!")
+	@Column(name="DS_CATEGORIA")
+	private String titulo;
 
 	public int getId() {
 		return id;
@@ -30,12 +30,10 @@ public class Perfil {
 	}
 
 	public String getTitulo() {
-		return nome;
+		return titulo;
 	}
 
 	public void setTitulo(String titulo) {
-		this.nome = titulo;
+		this.titulo = titulo;
 	}
-	
-	
 }
