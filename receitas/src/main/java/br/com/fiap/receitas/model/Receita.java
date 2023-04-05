@@ -27,12 +27,12 @@ public class Receita {
 	
 	@NotBlank(message = "Modo de Preparo obrigatório!")
 	@Column(name="DS_MODO_PREPARO")
-	private String modo_preparo;
+	private String modoPreparo;
 	
 	@NotBlank(message = "Data de cadastro obrigatória!")
 	@Temporal(TemporalType.DATE)
 	@Column(name="DT_CADASTRO")
-	private Calendar dataFabricacao;
+	private Calendar dataCadastro;
 	
 	@NotBlank(message = "Quantidade de ingredientes obrigatório!")
 	@Column(name="QT_INGREDIENTE")
@@ -67,20 +67,20 @@ public class Receita {
 		this.titulo = titulo;
 	}
 
-	public String getModo_preparo() {
-		return modo_preparo;
+	public String getmodoPreparo() {
+		return modoPreparo;
 	}
 
-	public void setModo_preparo(String modo_preparo) {
-		this.modo_preparo = modo_preparo;
+	public void setmodoPreparo(String modoPreparo) {
+		this.modoPreparo = modoPreparo;
 	}
 
-	public Calendar getDataFabricacao() {
-		return dataFabricacao;
+	public Calendar getdataCadastro() {
+		return dataCadastro;
 	}
 
-	public void setDataFabricacao(Calendar dataFabricacao) {
-		this.dataFabricacao = dataFabricacao;
+	public void setdataCadastro(Calendar dataFabricacao) {
+		this.dataCadastro = dataFabricacao;
 	}
 
 	public int getQuantidadeIngrediente() {

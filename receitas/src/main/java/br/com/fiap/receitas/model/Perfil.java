@@ -29,11 +29,11 @@ public class Perfil {
 		this.id = id;
 	}
 
-	public String getTitulo() {
+	public String getNome() {
 		return nome;
 	}
 
-	public void setTitulo(String titulo) {
+	public void setNome(String titulo) {
 		this.nome = titulo;
 	}
 	
