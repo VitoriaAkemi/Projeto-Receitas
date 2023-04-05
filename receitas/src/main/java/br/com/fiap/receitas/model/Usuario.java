@@ -1,10 +1,12 @@
 package br.com.fiap.receitas.model;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotBlank;
 
@@ -33,6 +35,9 @@ public class Usuario {
 		@NotBlank(message = "Senha obrigatória!")
 		@Column(name="DS_SENHA")
 		private String senha;
+		
+		@OneToOne(mappedBy = "usuario", cascade = CascadeType.PERSIST)
+		private Perfil perfil;
 	
 
 		public Usuario() {

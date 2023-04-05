@@ -5,6 +5,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.OneToOne;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.validation.constraints.NotBlank;
 
@@ -20,6 +22,10 @@ public class Perfil {
 	@NotBlank(message = "Nome obrigatório!")
 	@Column(name="NM_NOME")
 	private String nome;
+	
+	@OneToOne
+	@JoinColumn(name="ID_USUARIO")
+	private Usuario usuario;
 
 	public int getId() {
 		return id;
@@ -35,6 +41,14 @@ public class Perfil {
 
 	public void setNome(String titulo) {
 		this.nome = titulo;
+	}
+
+	public Usuario getUsuario() {
+		return usuario;
+	}
+
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 	
