@@ -19,7 +19,7 @@ public class Tipo {
 
 	@NotBlank(message = "Categoria obrigatório!")
 	@Column(name="DS_CATEGORIA")
-	private String titulo;
+	private String categoria;
 
 	public int getId() {
 		return id;
@@ -29,11 +29,11 @@ public class Tipo {
 		this.id = id;
 	}
 
-	public String getTitulo() {
-		return titulo;
+	public String getCategoria() {
+		return categoria;
 	}
 
-	public void setTitulo(String titulo) {
-		this.titulo = titulo;
+	public void setCategoria(String categoria) {
+		this.categoria = categoria;
 	}
 }
