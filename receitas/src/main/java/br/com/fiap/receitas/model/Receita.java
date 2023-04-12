@@ -12,7 +12,9 @@ import jakarta.persistence.OneToMany;
 import jakarta.persistence.SequenceGenerator;
 import jakarta.persistence.Temporal;
 import jakarta.persistence.TemporalType;
+import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 
 @Entity
 @SequenceGenerator(name= "receita", sequenceName = "SQ_RECEITA", allocationSize = 1)
@@ -31,21 +33,21 @@ public class Receita {
 	@Column(name="DS_MODO_PREPARO")
 	private String modoPreparo;
 	
-	@NotBlank(message = "Data de cadastro obrigatória!")
+	@NotNull(message = "Data de cadastro obrigatória!")
 	@Temporal(TemporalType.DATE)
 	@Column(name="DT_CADASTRO")
 	private Calendar dataCadastro;
 	
-	@NotBlank(message = "Quantidade de ingredientes obrigatório!")
+	@Min(1)
 	@Column(name="QT_INGREDIENTE")
 	private int quantidadeIngrediente;
 	
-	@NotBlank(message = "Tempo de preparo obrigatório!")
-	@Temporal(TemporalType.TIME)
+	@NotNull
+	@Temporal(TemporalType.DATE)
 	@Column(name="DT_TEMPO_PREPARO")
 	private Calendar tempoPreparo;
 	
-	@NotBlank(message = "Quantidade de rendimento obrigatório!")
+	@Min(1)
 	@Column(name="QT_RENDIMENTO")
 	private int quantidadeRendimento;
 	

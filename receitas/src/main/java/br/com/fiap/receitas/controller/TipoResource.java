@@ -29,7 +29,7 @@ public class TipoResource {
 	
 	// permite inserção pelo metodo post no postman
 	@ResponseStatus(HttpStatus.CREATED)
-	@PostMapping
+	@PostMapping(value = "/novoTipo")
 	public Tipo cadastrar (@RequestBody Tipo tipo ) {
 		return tipoRepository.save(tipo);
 	}

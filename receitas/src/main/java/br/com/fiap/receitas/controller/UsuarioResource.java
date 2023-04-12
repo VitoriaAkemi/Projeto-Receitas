@@ -29,7 +29,7 @@ public class UsuarioResource {
 	
 	// permite inserção pelo metodo post no postman
 	@ResponseStatus(HttpStatus.CREATED)
-	@PostMapping
+	@PostMapping(value = "/novoUsuario")
 	public Usuario cadastrar (@RequestBody Usuario usuario ) {
 		return usuarioRepository.save(usuario);
 	}

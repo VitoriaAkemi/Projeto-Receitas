@@ -28,7 +28,7 @@ public class PerfilResource {
 	
 	// permite inserção pelo metodo post no postman
 	@ResponseStatus(HttpStatus.CREATED)
-	@PostMapping
+	@PostMapping(value = "/novoPerfil")
 	public Perfil cadastrar (@RequestBody Perfil perfil ) {
 		return perfilRepository.save(perfil);
 	}

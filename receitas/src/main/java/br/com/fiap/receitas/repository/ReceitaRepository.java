@@ -1,5 +1,7 @@
 package br.com.fiap.receitas.repository;
 
+
+import java.sql.Timestamp;
 import java.util.List;
 
 import org.springframework.data.jpa.repository.JpaRepository;
@@ -12,9 +14,9 @@ public interface ReceitaRepository extends JpaRepository<Receita, Integer>{
 
 	List<Receita> findById(int id);
 	List<Receita> findByTitulo(String titulo);
-	//List<Receita> findByDataCadastro(Calendar dataCadastro);
+	//List<Receita> findByDataCadastro(Timestamp dataCadastro);
 	List<Receita> findByQuantidadeIngrediente(int quantidadeIngrediente);
-	//List<Receita> findByTempoPrepado(Calendar tempoPreparo);
+	//List<Receita> findByTempoPrepado(Timestamp tempoPreparo);
 	List<Receita> findByQuantidadeRendimento(int quantidadeRendimento);
 	List<Receita> findByCategoria(String categoria);
 	

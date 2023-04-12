@@ -27,7 +27,7 @@ public class ReceitaResource {
 	public List<Receita> listar() {return receitaRepository.findAll();}
 	
 	@ResponseStatus(HttpStatus.CREATED)
-	@PostMapping
+	@PostMapping(value = "/novaReceita")
 	public Receita cadastrar (@RequestBody Receita receita ) {
 		return receitaRepository.save(receita);
 	}
